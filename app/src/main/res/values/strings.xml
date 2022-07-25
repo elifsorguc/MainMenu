@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">MainMenu</string>
+    <string-array name="studyRooms">
+        <item>Study Room 1</item>
+        <item>Study Room 2</item>
+        <item>Study Room 3</item>
+        <item>Study Room 4</item>
+        <item>Study Room 5</item>
+        <item>Study Room 6</item>
+        <item>Study Room 7</item>
+        <item>Study Room 8</item>
+        <item>Study Room 9</item>
+        <item>Study Room 10</item>
+        <item>Study Room 11</item>
+        <item>Study Room 12</item>
+        <item>Study Room 13</item>
+    </string-array>
+
+    <string-array name="multimediaRooms">
+        <item>MultiMedia Room 1</item>
+        <item>MultiMedia Room 2</item>
+        <item>MultiMedia Room 3</item>
+        <item>MultiMedia Room 4</item>
+        <item>MultiMedia Room 5</item>
+        <item>MultiMedia Room 6</item>
+    </string-array>
+</resources>
