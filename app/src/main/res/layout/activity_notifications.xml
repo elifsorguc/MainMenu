@@ -7,21 +7,22 @@
         android:id="@+id/notificationsText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:text="Notifications"
-        android:textColor="@android:color/black"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
-        android:textSize="23sp"></TextView>
+        android:text="Notifications"
+        android:textColor="@android:color/black"
+        android:backgroundTint="@color/material_dynamic_tertiary95"
+        android:textSize="23sp"
+        android:textStyle="bold"></TextView>
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/notificationsRecyclerView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/notificationsText"
         android.nestedScrollingEnabled="true"
-        ></androidx.recyclerview.widget.RecyclerView>
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/notificationsText"
+        android:layout_marginTop="4dp"></androidx.recyclerview.widget.RecyclerView>
 
 </RelativeLayout>

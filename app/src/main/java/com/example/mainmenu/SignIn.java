@@ -3,6 +3,7 @@ package com.example.mainmenu;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -55,7 +56,8 @@ public class SignIn extends AppCompatActivity {
 
                             };
 
-
+                    Intent intent = new Intent(SignIn.this, MainActivity.class);
+                    startActivity(intent);
                 }
                 else
                     Toast.makeText(SignIn.this, "Email and password cannot be empty!", Toast.LENGTH_SHORT).show();

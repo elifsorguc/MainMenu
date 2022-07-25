@@ -65,6 +65,7 @@ public class StudentSignUp extends AppCompatActivity {
         signUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 if (!TextUtils.isEmpty(email.getText()) && !TextUtils.isEmpty(password.getText())) {
                     mAuth.createUserWithEmailAndPassword(email.getText().toString(), password.getText().toString())
                             .addOnCompleteListener(StudentSignUp.this, new OnCompleteListener<AuthResult>() {
@@ -101,6 +102,9 @@ public class StudentSignUp extends AppCompatActivity {
 
                             });
                 }
+                Intent intent = new Intent(StudentSignUp.this, GenreSelection.class);
+                startActivity(intent);
+
 
 
 

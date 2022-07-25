@@ -17,20 +17,24 @@ public class StudentBook extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         books = new ArrayList<>();
-
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_student_book);
 
-        this.book = new Book("STRING NAME", "LANGUAGE", "AUTHOR", "PUBLICATION", new Genre(), "ISBN", (LocalDate) null,(int) 12);
-        //pubdate = LocalDate!!!
-        //THERE IS GENRE CLASS!!!
-        findBook("str");
 
         //viewBinding
         binding = ActivityStudentBookBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
         binding.bookName.setText("test");
+
+
+        this.book = new Book("The science of Harry Potter : how magic really works / Roger Highfield.", "English", "Highfield, J.R.L. (John Roger Loxdale)", "London : Headline, 2003.", new Genre(), "0755311515", (LocalDate) null,(int) 12);
+        //String name, String language, String author, String publication, Genre genre, String ISBN, LocalDate pubdate,int image){
+
+        //pubdate = LocalDate!!!
+        //THERE IS GENRE CLASS!!!
+        findBook("str");
+
+
 
     }
 

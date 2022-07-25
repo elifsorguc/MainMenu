@@ -11,7 +11,10 @@ import android.widget.Toast;
 
 public class StudentStudyMultiMediaRooms extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
-
+        private Spinner spinnerStudentStudyRooms;
+        private Spinner spinnerMultimediaRooms;
+        private ArrayAdapter<CharSequence> adapter1;
+        private ArrayAdapter<CharSequence> adapter2;
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -19,17 +22,17 @@ public class StudentStudyMultiMediaRooms extends AppCompatActivity implements Ad
 
 
             // Properties
-            Spinner spinnerStudentStudyRooms = findViewById(R.id.spinnerStudyRooms);
-            Spinner spinnerMultimediaRooms = findViewById(R.id.spinnerMultimediaRooms);
+            spinnerStudentStudyRooms = findViewById(R.id.spinnerStudyRooms);
+            spinnerMultimediaRooms = findViewById(R.id.spinnerMultimediaRooms);
 
 
             // Adapters
-            ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(StudentStudyMultiMediaRooms.this, R.array.studyRooms, android.R.layout.simple_spinner_item);
+            adapter1 = ArrayAdapter.createFromResource(StudentStudyMultiMediaRooms.this, R.array.studyRooms, android.R.layout.simple_spinner_item);
             adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             spinnerStudentStudyRooms.setAdapter(adapter1);
             spinnerStudentStudyRooms.setOnItemSelectedListener(StudentStudyMultiMediaRooms.this);
 
-            ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this, R.array.multimediaRooms, android.R.layout.simple_spinner_item);
+            adapter2 = ArrayAdapter.createFromResource(this, R.array.multimediaRooms, android.R.layout.simple_spinner_item);
             adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             spinnerMultimediaRooms.setAdapter(adapter2);
             spinnerMultimediaRooms.setOnItemSelectedListener(StudentStudyMultiMediaRooms.this);

@@ -2,6 +2,7 @@ package com.example.mainmenu;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,6 +21,7 @@ public class GenreSelection extends AppCompatActivity {
     private CheckBox comedy;
 
     private Button mainBtn;
+    private Button continueButton;
 
     ArrayList<String> genres = new ArrayList<String>();
 
@@ -27,6 +29,16 @@ public class GenreSelection extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        continueButton = findViewById(R.id.main_btn);
+
+        continueButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(GenreSelection.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
         thriller = (CheckBox) findViewById(R.id.thrillers_check);
         cooking = (CheckBox) findViewById(R.id.cooking_check);
         history = (CheckBox) findViewById(R.id.history_check);

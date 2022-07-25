@@ -20,7 +20,7 @@
             android:name=".SignIn"
             android:exported="false" />
         <activity
-            android:name=".StudentSignUp"
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".AdminControlLibrary"
@@ -56,7 +56,7 @@
             android:name=".Settings"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".StudentSignUp"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -14,7 +14,7 @@
         android:layout_margin="1dp"
         android:layout_marginStart="2dp"
         android:layout_marginEnd="88dp"
-        android:layout_marginBottom="4dp"
+        android:backgroundTint="@color/material_dynamic_tertiary70"
         android:gravity="center"
         android:padding="20dp"
         android:text="SIGN IN"
@@ -22,14 +22,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView4"
         app:rippleColor="@color/teal_700"
-        app:strokeColor="@color/teal_700"
-        android:backgroundTint="@color/material_dynamic_tertiary70"/>
+        app:strokeColor="@color/teal_700" />
 
     <CheckBox
         android:id="@+id/adminCheck"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="2dp"
         app:layout_constraintEnd_toStartOf="@+id/admintxt"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
 
     <TextView
@@ -43,6 +45,7 @@
         android:text="I'm an admin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/adminCheck"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
         app:layout_constraintVertical_bias="0.111" />
 
@@ -157,12 +160,11 @@
         android:layout_width="157dp"
         android:layout_height="37dp"
         android:layout_marginStart="67dp"
-        android:layout_marginTop="85dp"
-        android:layout_marginEnd="45dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="10dp"
         android:text="Already have an account"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/signInPage"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/admintxt" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
