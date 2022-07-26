@@ -1,0 +1,24 @@
+BOOKWORM PROJECT
+
+Firstly, since we mainly focused on getting the application to work, we did not put any 
+effort into its appearance. We would like to add more pictures and make it more enjoyable 
+to use. If we had more time we would not eliminate some of the features and we would 
+implement all of the features we said we would do in the first place. If the database were 
+to be fixed things would have been easier for us but in the last minute we just came face to
+face with the fact that new error were popping up and that we were unable to solve them. 
+However, despite all of this dissatisfaction, this was a great experience in our app 
+development journey. The little achievements we had throughout the process made us 
+incredibly happy and if we had more time, we would have definitely completed a decent app. 
+In anyways, we did the best we could, we had a couple of sleepless nights and most 
+importantly we had a lot of fun while creating this application with all of that learnings 
+that we did.
+
+Some of us learned what a database is and how it works and others learned android studio. 
+However, the most important thing was that we learned how to be compatible with group 
+members and how to overcome problems together.
+
+We could have started a bit early and put more effort on the database because our app mostly
+depends on the database. Also, we could have focused on main aspects of the project instead 
+of putting a lot of details in it.
+We spent a lot of time on the Navigation drawer and such little things. We should have made 
+an efficient plan to make the project work.
