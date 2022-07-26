@@ -58,7 +58,7 @@ public class StudentSignUp extends AppCompatActivity {
         mUser = mAuth.getCurrentUser();
         mFirestore = FirebaseFirestore.getInstance();
 
-        student = new Student("elif@bilkent.edu.tr", "123456" , "22003786", false,"elif pınar balbal", "pinar", true, "cs", true,false,false,false);
+        student = new Student(email.toString(), password.toString() , "22003786", false,name.toString(), "pinar", true, "cs", true,false,false,false);
         signUpBtn = (Button) findViewById(R.id.signupbtn);
         goSignInPage = (Button) findViewById(R.id.signInPage);
 
@@ -114,15 +114,15 @@ public class StudentSignUp extends AppCompatActivity {
                                         mData.put("name", student.getName());
                                         mData.put("password", student.getPassword());
                                         mData.put("mail", student.getEmail());
-                                        mData.put("genres", Arrays.asList(student.getGenres()));
-                                        mData.put("currentBook", Arrays.asList(student.getCurrentBook()));
+                                        mData.put("genres", student.getGenres());
+                                        mData.put("currentBook", student.getCurrentBook());
                                         mData.put("surname", student.getSurname());
                                         mData.put("department", student.getDepartment());
                                         mData.put("isProfileVisible", student.getProfileVisibility());
                                         mData.put("isStatusVisible", student.getStatusVisibility());
                                         mData.put("isBooklistVisible", student.getListVisibility());
                                         mData.put("isAtLibrary", student.getIsAtLibrary());
-                                        mData.put("friends", Arrays.asList(student.getFriends()));
+                                        mData.put("friends", (student.getFriends()));
 
                                         mFirestore.collection("user").document(mUser.getUid())
                                                 .set(mData);
@@ -173,7 +173,7 @@ public class StudentSignUp extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     DocumentSnapshot document = task.getResult();
                     if (!document.exists()) {
-                        HashMap mata = new HashMap<>();
+                        HashMap<String, Object> mata = new HashMap<>();
                         mata.put("room 1", "");
                         mata.put("room 2", "");
                         mata.put("room 3", "");
@@ -199,7 +199,7 @@ public class StudentSignUp extends AppCompatActivity {
                     }
                 }
                 else {
-                    HashMap mata = new HashMap<>();
+                    HashMap<String, Object> mata = new HashMap<>();
                     mata.put("room 1", "");
                     mata.put("room 2", "");
                     mata.put("room 3", "");
@@ -225,7 +225,7 @@ public class StudentSignUp extends AppCompatActivity {
                 }
             }
         });
-        HashMap mat = new HashMap<>();
+        HashMap<String, Object> mat = new HashMap<>();
         mat.put("bookUid", "");
         mat.put("ownerUid", "");
         mat.put("booklistName", "");

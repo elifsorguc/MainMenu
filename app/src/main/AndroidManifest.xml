@@ -17,13 +17,7 @@
             android:name=".Navigation"
             android:exported="false" />
         <activity
-            android:name=".pastBooks"
-            android:exported="false" />
-        <activity
             android:name=".favourites"
-            android:exported="false" />
-        <activity
-            android:name=".BorrowedBooks"
             android:exported="false" />
         <activity
             android:name=".Profile"
