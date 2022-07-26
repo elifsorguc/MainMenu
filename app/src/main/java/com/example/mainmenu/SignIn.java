@@ -41,12 +41,25 @@ public class SignIn extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(!TextUtils.isEmpty(email.getText()) && !TextUtils.isEmpty(password.getText())){
+                    String e_mail = email.getText().toString();
+                    String pwd = password.getText().toString();
+
+                    // checking if the email is a Bilkent mail address
+
+                    if(!e_mail.contains("bilkent") || !e_mail.contains("@")){
+                        Toast.makeText(getApplicationContext(), "You haven't entered a Bilkent mail address." , Toast.LENGTH_LONG).show();
+                        return;
+                    }
                     mAuth.signInWithEmailAndPassword(email.getText().toString(),password.getText().toString())
                             .addOnSuccessListener(SignIn.this, new OnSuccessListener<AuthResult>() {
                                 @Override
                                 public void onSuccess(AuthResult authResult) {
                                     mUser = mAuth.getCurrentUser();
                                     System.out.println("User Email: " + mUser.getEmail() );
+                                    Toast.makeText(SignIn.this, "Successful!", Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(SignIn.this, MainActivity.class);
+                                    startActivity(intent);
+
                                 }
                             }).addOnFailureListener(SignIn.this, new OnFailureListener() {
                                 @Override
@@ -57,11 +70,11 @@ public class SignIn extends AppCompatActivity {
 
                             };
 
-                    Intent intent = new Intent(SignIn.this, MainActivity.class);
-                    startActivity(intent);
+
                 }
                 else
                     Toast.makeText(SignIn.this, "Email and password cannot be empty!", Toast.LENGTH_SHORT).show();
+
 
                 /*
                 //DATABASE

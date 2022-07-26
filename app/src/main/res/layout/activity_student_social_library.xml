@@ -22,7 +22,7 @@
             android:id="@+id/numberOfPeopleInLibraryText"
             android:layout_width="match_parent"
             android:layout_height="41dp"
-            android:text="Number Of People In Library // Database" />
+            android:text="Number Of People In Library: 4" />
 
         <Button
             android:id="@+id/buttonFriendsInLibrary"

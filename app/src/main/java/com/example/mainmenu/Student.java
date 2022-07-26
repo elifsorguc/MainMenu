@@ -12,15 +12,24 @@ public class Student extends User {
     private boolean isProfileVisible;
     private boolean isStatusVisible;
     private boolean isListVisible;
-    private BookLists bookList;
-    
+    private BookList bookList;
+    private String currentBook;
+
     ArrayList<Genre> genres = new ArrayList<Genre>();
     ArrayList<BookList> bookLists = new ArrayList<BookList>();
     ArrayList<Student> friends = new ArrayList<Student>();
     ArrayList<Book> previousBooks = new ArrayList<Book>();
     ArrayList<Book> favorites = new ArrayList<Book>();
-    ArrayList<Book> currentBook = new ArrayList<>();
-    //Book currentBook;
+
+    public  Student(String email, String password,String bilkentID, boolean isAdmin, String name,String surname,boolean isStudent, String department, boolean isAtLibrary, boolean isProfileVisible, boolean isStatusVisible,  boolean isListVisible){
+        super(email,password,bilkentID,isAdmin,name,surname);
+        this.isStudent = isStudent;
+        this.department = department;
+        this.isAtLibrary = isAtLibrary;
+        this.isProfileVisible = isProfileVisible;
+        this.isStatusVisible = isStatusVisible;
+        this.isListVisible = isListVisible;
+    }
 
     // getter methods
 
@@ -43,12 +52,12 @@ public class Student extends User {
         return bookLists;
     }
     public ArrayList<Book> getPrevBooks(){
-       return previousBooks; 
+        return previousBooks;
     }
     public ArrayList<Book> getFavBooks(){
         return favorites;
     }
-    public ArrayList<Book> getCurrentBook(){return currentBook; }
+    public String getCurrentBook(){return currentBook; }
 
     public ArrayList<Genre> getGenres(){
         return genres;
@@ -108,7 +117,7 @@ public class Student extends User {
         this.previousBooks = previosBooks;
     }
 
-    public void setCurrentBook(ArrayList<Book> book){
+    public void setCurrentBook( String book){
         this.currentBook = book;
     }
 
@@ -117,24 +126,24 @@ public class Student extends User {
     }
 
     public void borrowBook(Book book){
-        this.currentBook.add(book);
+
         previousBooks.add(book);
     }
 
     public void createBookList(BookList list){
         bookLists.add(list);
     }
-    
-    public void addBookToBookList(BookLists list, Book book){
+
+    public void addBookToBookList(BookList list, Book book){
         list.addBook(book);
         this.bookList = list;
     }
 
-    public void deleteBookFromBookList(BookLists list, Book book){
+    public void deleteBookFromBookList(BookList list, Book book){
         list.removeBook(book);
         this.bookList = list;
     }
 
-    
+
 
 }

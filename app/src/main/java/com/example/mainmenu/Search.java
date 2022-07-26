@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -22,12 +23,19 @@ public class Search extends AppCompatActivity implements AdapterView.OnItemSelec
     private ListView search;
     private ArrayAdapter<Book> adapters;
     private ActivitySearchBinding binding;
-    private Book book;
+    private Book book1;
     private Book book2;
+    private Book book3;
+    private Book book4;
+    private Book book5;
+    private SearchView searchView1;
+    private ArrayAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         books = new ArrayList<>();
         super.onCreate(savedInstanceState);
+        searchView1 = findViewById(R.id.searchView);
+
 
         loadBooks();
 
@@ -35,10 +43,9 @@ public class Search extends AppCompatActivity implements AdapterView.OnItemSelec
         binding = ActivitySearchBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
-        search = (ListView) findViewById(R.id.search_book);
 
         //mapping
-        ArrayAdapter adapter = new ArrayAdapter(Search.this, android.R.layout.simple_list_item_1,
+        adapter = new ArrayAdapter(Search.this, android.R.layout.simple_list_item_1,
                 books.stream().map(book -> book.getName()).collect(Collectors.toList())
         );
 
@@ -53,9 +60,23 @@ public class Search extends AppCompatActivity implements AdapterView.OnItemSelec
             }
         });
 
+        binding.searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                Search.this.adapter.getFilter().filter(s);
+                return false;
+            }
 
+            @Override
+            public boolean onQueryTextChange(String s) {
+                Search.this.adapter.getFilter().filter(s);
+                return false;
+            }
+        });
         createSpinner();
     }
+
+
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -75,9 +96,19 @@ public class Search extends AppCompatActivity implements AdapterView.OnItemSelec
         genre1.add("horror");
         genre2.add("comedy");
         this.book2 = new Book("The science of Harry Potter : how magic really works / Roger Highfield.", "English", "Highfield, J.R.L. (John Roger Loxdale)", "London : Headline, 2003.", genre1, "0755311515", 20,R.drawable.ic_book);
-        this.book = new Book("The science of Harry Potter : how magic really works / Roger Highfield.", "English", "Highfield, J.R.L. (John Roger Loxdale)", "London : Headline, 2003.", genre2, "0755311515", 12,R.drawable.ic_book);
-        books.add(book);
+        genre1.add("history");
+        this.book1 = new Book("The Godfather/ Mario Puzo","English", "English", "New York : G. P. Putnam's Sons, 1969.", genre1, "9781408294345", 12,R.drawable.ic_book);
+        genre1.add("fantasy");
+        this.book3 = new Book("The Lord of The Rings/ J. R. R. Tolkien", "English","English", "London : HalpertCollins, 1973.", genre1, "9780618129027", 12,R.drawable.ic_book);
+        genre1.add("thriller");
+        this.book4 = new Book("Shining / Stephen King", "English","English", "New York : A Signet Book, 1978.", genre1, "9780451193889", 12,R.drawable.ic_book);
+        genre1.add("history");
+        this.book5 = new Book("Shakespeare / Fido Martin", "English","English", "London ; New York : Hamlyn, 1984.", genre1, "9780600382553", 12,R.drawable.ic_book);
+        books.add(book1);
+        books.add(book3);
         books.add(book2);
+        books.add(book4);
+        books.add(book5);
     }
     private void createSpinner(){
         Spinner spinnerSort = findViewById(R.id.spinnerSort);

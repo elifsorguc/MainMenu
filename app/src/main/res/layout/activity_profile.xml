@@ -12,7 +12,8 @@
         android:id="@+id/nameSurname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Name Surname"
+        android:layout_marginStart="10dp"
+        android:text="Elif Pınar Balbal"
         android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,7 +26,8 @@
         android:id="@+id/emailtxt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="name.surname@ug.bilkent.edu.tr"
+        android:layout_marginStart="10dp"
+        android:text="elifpinar@ug.bilkent.edu.tr"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -59,48 +61,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.396" />
-
-    <Button
-        android:id="@+id/pastBooks_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/material_dynamic_tertiary70"
-        android:padding="20dp"
-        android:text="Past Books"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/booklists_btn"
-        app:layout_constraintVertical_bias="0.03" />
-
-    <Button
-        android:id="@+id/favorites_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/material_dynamic_tertiary70"
-        android:padding="20dp"
-        android:text="Favorites"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pastBooks_btn"
-        app:layout_constraintVertical_bias="0.052" />
-
-    <Button
-        android:id="@+id/borrowedbooks_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/material_dynamic_tertiary70"
-        android:padding="20dp"
-        android:text="Borrowed Books"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/favorites_btn"
-        app:layout_constraintVertical_bias="0.08" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

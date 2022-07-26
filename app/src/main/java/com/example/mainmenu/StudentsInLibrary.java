@@ -25,7 +25,7 @@ public class StudentsInLibrary extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_students_in_library);
         mUser = mAuth.getCurrentUser();
-        mFirestore.collection("Users").document("userUid")
+        mFirestore.collection("user").document(mUser.getUid())
                 .get()
                 .addOnSuccessListener(this, new OnSuccessListener<DocumentSnapshot>() {
                     @Override

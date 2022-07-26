@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/notificationsText2"
+            android:id="@+id/friends"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -33,6 +33,7 @@
             android:textStyle="bold"></TextView>
 
         <ListView
+            android:id="@+id/friendsListView"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 

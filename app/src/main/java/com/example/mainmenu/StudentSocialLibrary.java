@@ -54,7 +54,7 @@ public class StudentSocialLibrary extends AppCompatActivity {
 
     // Opening new pages
     private void openFriendsInLibrary() {
-        Intent intent = new Intent(this, StudentsInLibrary.class);
+        Intent intent = new Intent(StudentSocialLibrary.this, Friends.class);
         startActivity(intent);
     }
 }

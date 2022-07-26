@@ -1,5 +1,8 @@
 package com.example.mainmenu;
-
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -10,7 +13,9 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class Profile extends AppCompatActivity {
-
+    private FirebaseAuth mAuth;
+    private FirebaseFirestore mFirestore;
+    private FirebaseUser mUser;
     private Button bookLists;
     private Button pastBooks;
     private Button favorites;
@@ -22,6 +27,10 @@ public class Profile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+
+        mAuth = FirebaseAuth.getInstance();
+        mUser = FirebaseAuth.getInstance().getCurrentUser();
+        mFirestore = FirebaseFirestore.getInstance();
         bookLists = findViewById(R.id.booklists_btn);
         bookLists.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,39 +40,14 @@ public class Profile extends AppCompatActivity {
             }
         });
 
-        pastBooks = findViewById(R.id.pastBooks_btn);
-        pastBooks.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Profile.this, pastBooks.class);
-                startActivity(intent);
-            }
-        });
 
-        favorites = findViewById(R.id.favorites_btn);
-        favorites.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Profile.this, favorites.class);
-                startActivity(intent);
-            }
-        });
 
-        borrowed = findViewById(R.id.borrowedbooks_btn);
-        borrowed.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Profile.this, BorrowedBooks.class);
-                startActivity(intent);
-            }
-        });
 
-        //SET TEXT => DATABASE
         name = findViewById(R.id.nameSurname);
-        name.setText("NAME");
+        name.setText(mAuth.getCurrentUser().getEmail().substring(0,(mAuth.getCurrentUser().getEmail()).indexOf('@')));
 
         email = findViewById(R.id.emailtxt);
-        email.setText("EMAIL");
+        email.setText(mAuth.getCurrentUser().getEmail());
 
 
 

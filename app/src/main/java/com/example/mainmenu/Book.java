@@ -38,11 +38,11 @@ public class Book implements Serializable {
     }
 
     public String getName(){
+
         return name;
     }
 
     public String getPublication(){
-
         return publication;
     }
 
@@ -73,7 +73,6 @@ public class Book implements Serializable {
     }
 
     public String getauthor(){
-
         return author;
     }
 

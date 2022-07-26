@@ -61,7 +61,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email"
-        app:layout_constraintVertical_bias="0.033" />
+        app:layout_constraintVertical_bias="0.033"
+        android:inputType="textPassword"/>
 
     <Button
         android:id="@+id/signinbtn"

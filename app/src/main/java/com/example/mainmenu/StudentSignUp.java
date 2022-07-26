@@ -19,6 +19,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.Arrays;
@@ -27,6 +29,7 @@ import java.util.HashMap;
 public class StudentSignUp extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseUser mUser;
+    private DocumentReference docRef;
     private FirebaseFirestore mFirestore;
     private HashMap<String, Object> mData;
     private EditText name;
@@ -54,7 +57,8 @@ public class StudentSignUp extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
         mFirestore = FirebaseFirestore.getInstance();
-        student = new Student();
+
+        student = new Student("elif@bilkent.edu.tr", "123456" , "22003786", false,"elif pınar balbal", "pinar", true, "cs", true,false,false,false);
         signUpBtn = (Button) findViewById(R.id.signupbtn);
         goSignInPage = (Button) findViewById(R.id.signInPage);
 
@@ -69,8 +73,35 @@ public class StudentSignUp extends AppCompatActivity {
         signUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (!TextUtils.isEmpty(email.getText()) && !TextUtils.isEmpty(password.getText()) &&!TextUtils.isEmpty(name.getText()) && !TextUtils.isEmpty(ID.getText())) {
 
-                if (!TextUtils.isEmpty(email.getText()) && !TextUtils.isEmpty(password.getText())) {
+                    String e_mail = email.getText().toString();
+                    String pwd = password.getText().toString();
+
+                    // checking if the email is a Bilkent mail address
+
+                    if(!e_mail.contains("bilkent") || !e_mail.contains("@")){
+                        Toast.makeText(getApplicationContext(), "You haven't entered a Bilkent mail address." , Toast.LENGTH_LONG).show();
+                        return;
+                    }
+
+                    // checking if bilkent ID has passed as a numeric value
+                    try {
+                        long bilkent_id = Integer.parseInt(ID.getText().toString());
+                        Log.e("ID_KON>TROL","" + bilkent_id);
+                    }
+                    catch(Exception err){
+                        Toast.makeText(getApplicationContext(), "Bilkent ID should be a numeric value." , Toast.LENGTH_LONG).show();
+                        return;
+                    }
+
+                    // checking if the password is at least 6 digit long
+
+                    if(pwd.length() < 6){
+                        Toast.makeText(getApplicationContext(), "Your password should be at least 6 digit long." , Toast.LENGTH_LONG).show();
+                        return;
+                    }
+
                     mAuth.createUserWithEmailAndPassword(email.getText().toString(), password.getText().toString())
                             .addOnCompleteListener(StudentSignUp.this, new OnCompleteListener<AuthResult>() {
                                 @Override
@@ -93,7 +124,7 @@ public class StudentSignUp extends AppCompatActivity {
                                         mData.put("isAtLibrary", student.getIsAtLibrary());
                                         mData.put("friends", Arrays.asList(student.getFriends()));
 
-                                        mFirestore.collection("Users").document(mUser.getUid())
+                                        mFirestore.collection("user").document(mUser.getUid())
                                                 .set(mData);
                                         System.out.println("Veri!");
                                     }
@@ -105,9 +136,13 @@ public class StudentSignUp extends AppCompatActivity {
 
 
                             });
+                    Intent intent = new Intent(StudentSignUp.this, GenreSelection.class);
+                    startActivity(intent);
                 }
-                Intent intent = new Intent(StudentSignUp.this, GenreSelection.class);
-                startActivity(intent);
+                else{
+                    Toast.makeText(getApplicationContext(), "You need to enter email, id, name and password to sign up" , Toast.LENGTH_LONG).show();
+                }
+
 
 
 
@@ -129,5 +164,71 @@ public class StudentSignUp extends AppCompatActivity {
         }
         return check;
     }
-
+    public void createCollections()
+    {
+        docRef = mFirestore.collection("study").document("rooms");
+        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (!document.exists()) {
+                        HashMap mata = new HashMap<>();
+                        mata.put("room 1", "");
+                        mata.put("room 2", "");
+                        mata.put("room 3", "");
+                        mata.put("room 4", "");
+                        mata.put("room 5", "");
+                        mata.put("room 6", "");
+                        mata.put("room 7", "");
+                        mata.put("room 8", "");
+                        mata.put("room 9", "");
+                        mata.put("room 10", "");
+                        mata.put("room 11", "");
+                        mata.put("room 12", "");
+                        mata.put("room 13", "");
+                        mata.put("room 14", "");
+                        mata.put("room 15", "");
+                        mata.put("room 16", "");
+                        mata.put("room 17", "");
+                        mata.put("room 18", "");
+                        mata.put("room 19", "");
+                                        /*mFirestore.collection("users")
+                                                .add(mData);*/
+                        mFirestore.collection("study").document("rooms").set(mata);
+                    }
+                }
+                else {
+                    HashMap mata = new HashMap<>();
+                    mata.put("room 1", "");
+                    mata.put("room 2", "");
+                    mata.put("room 3", "");
+                    mata.put("room 4", "");
+                    mata.put("room 5", "");
+                    mata.put("room 6", "");
+                    mata.put("room 7", "");
+                    mata.put("room 8", "");
+                    mata.put("room 9", "");
+                    mata.put("room 10", "");
+                    mata.put("room 11", "");
+                    mata.put("room 12", "");
+                    mata.put("room 13", "");
+                    mata.put("room 14", "");
+                    mata.put("room 15", "");
+                    mata.put("room 16", "");
+                    mata.put("room 17", "");
+                    mata.put("room 18", "");
+                    mata.put("room 19", "");
+                                        /*mFirestore.collection("users")
+                                                .add(mData);*/
+                    mFirestore.collection("study").document("rooms").set(mata);
+                }
+            }
+        });
+        HashMap mat = new HashMap<>();
+        mat.put("bookUid", "");
+        mat.put("ownerUid", "");
+        mat.put("booklistName", "");
+        mFirestore.collection("booklist").document("placeholder").set(mat);
+    }
 }

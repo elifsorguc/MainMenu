@@ -20,11 +20,12 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.155" />
 
-    <!--android:src="@drawable/detective_story"-->
+    <!---->
     <ImageView
         android:id="@+id/detective_image"
         android:layout_width="60dp"
         android:layout_height="60dp"
+        android:src="@drawable/detective_story"
         android:contentDescription="detective"
 
         app:layout_constraintBottom_toBottomOf="parent"
@@ -33,11 +34,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.293" />
-<!--android:src="@drawable/cooking"-->
+<!---->
     <ImageView
         android:id="@+id/cooking_image"
         android:layout_width="60dp"
         android:layout_height="60dp"
+        android:src="@drawable/cooking"
         android:contentDescription="cooking"
 
         app:layout_constraintBottom_toBottomOf="parent"
@@ -47,11 +49,12 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.293" />
 
-    <!--android:src="@drawable/hat"-->
+    <!---->
     <ImageView
         android:id="@+id/fantasy_image"
         android:layout_width="60dp"
         android:layout_height="60dp"
+        android:src="@drawable/hat"
         android:contentDescription="fantasy"
 
         app:layout_constraintBottom_toBottomOf="parent"
@@ -61,11 +64,12 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.472" />
 
-    <!--android:src="@drawable/horror_2"-->
+    <!---->
     <ImageView
         android:id="@+id/horror_image"
         android:layout_width="60dp"
         android:layout_height="60dp"
+        android:src="@drawable/horror_2"
         android:contentDescription="horror"
 
         app:layout_constraintBottom_toBottomOf="parent"
@@ -75,7 +79,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.649" />
 
-    <!--android:src="@drawable/history"-->
+    <!---->
     <ImageView
         android:id="@+id/history_image"
         android:layout_width="60dp"
@@ -87,13 +91,15 @@
         app:layout_constraintHorizontal_bias="0.193"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/history"
         app:layout_constraintVertical_bias="0.472" />
 
-    <!--android:src="@drawable/romance"-->
+    <!---->
     <ImageView
         android:id="@+id/romance_image"
         android:layout_width="60dp"
         android:layout_height="60dp"
+        android:src="@drawable/romance"
         android:contentDescription="romance"
 
         app:layout_constraintBottom_toBottomOf="parent"
@@ -103,11 +109,12 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.649" />
 
-    <!--android:src="@drawable/space_colony"-->
+    <!---->
     <ImageView
         android:id="@+id/science_fiction"
         android:layout_width="60dp"
         android:layout_height="60dp"
+        android:src="@drawable/space_colony"
         android:contentDescription="science fiction"
 
         app:layout_constraintBottom_toBottomOf="parent"
@@ -117,11 +124,12 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.827" />
 
-    <!--android:src="@drawable/genres"-->
+    <!---->
     <ImageView
         android:id="@+id/genres_image"
         android:layout_width="60dp"
         android:layout_height="60dp"
+        android:src="@drawable/genres"
         android:contentDescription="genres"
 
         app:layout_constraintBottom_toBottomOf="parent"
@@ -131,11 +139,12 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.043" />
 
-    <!--android:src="@drawable/comedy"-->
+    <!---->
     <ImageView
         android:id="@+id/comedy_image"
         android:layout_width="60dp"
         android:layout_height="60dp"
+        android:src="@drawable/comedy"
         android:contentDescription="comedy"
 
         app:layout_constraintBottom_toBottomOf="parent"
