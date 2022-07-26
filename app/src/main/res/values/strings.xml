@@ -24,4 +24,20 @@
         <item>MultiMedia Room 5</item>
         <item>MultiMedia Room 6</item>
     </string-array>
+
+    <string-array name="sortOptions">
+        <item>Alphabetically</item>
+        <item>By Ratings</item>
+    </string-array>
+
+    <string-array name="bookLists">
+        <item>favourites</item>
+        <item>holdings</item>
+    </string-array>
+
+    <string name="navigation_drawer_open">open navigation drawer</string>
+    <string name="navigation_drawer_close">close navigation drawer</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="past_books">PAST BOOKS</string>
+
 </resources>

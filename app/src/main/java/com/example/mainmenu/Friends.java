@@ -7,23 +7,28 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class Friends extends AppCompatActivity {
-    Button signIn;
+import com.example.mainmenu.databinding.ActivityFriendsBinding;
+import com.example.mainmenu.databinding.ActivitySearchBinding;
 
+import java.util.ArrayList;
+
+public class Friends extends AppCompatActivity {
+    private ArrayList<User> friends;
+   private ActivityFriendsBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_friends);
+        //viewBinding
+        binding = ActivityFriendsBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
+        friends = new ArrayList<>();
 
-        signIn = findViewById(R.id.socialLibrary);
 
-        signIn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Friends.this, com.example.mainmenu.StudentSignUp.class);
-                startActivity(intent);
-            }
-        });
+
+
 
     }
+
+
 }

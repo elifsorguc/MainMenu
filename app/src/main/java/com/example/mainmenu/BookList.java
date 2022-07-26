@@ -1,24 +1,16 @@
-
 package com.example.mainmenu;
-import java.util.ArrayList;
 
-/**
- * BookList
- */
-public class BookList {
 
-    private ArrayList<Book> bookList;
+import androidx.appcompat.app.AppCompatActivity;
 
-    // constructor
-    public BookList(ArrayList<Book> books){
-        this.bookList = books;
-    }
+import android.os.Bundle;
 
-    public void addBook(Book book){
-        bookList.add(book);
-    }
+public class BookList extends AppCompatActivity {
 
-    public void removeBook(Book book){
-        bookList.remove(book);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_book_lists);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }

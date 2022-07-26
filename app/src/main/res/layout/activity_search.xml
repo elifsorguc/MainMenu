@@ -50,12 +50,18 @@
                 android:textSize="20sp" />
 
             <Spinner
-                android:id="@+id/spinnerStudyRooms"
+                android:id="@+id/spinnerSort"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
         </LinearLayout>
+
+        <ListView
+            android:id="@+id/search_book"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
 
     </LinearLayout>

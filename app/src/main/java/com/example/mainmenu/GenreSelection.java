@@ -21,23 +21,15 @@ public class GenreSelection extends AppCompatActivity {
     private CheckBox comedy;
 
     private Button mainBtn;
-    private Button continueButton;
 
     ArrayList<String> genres = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        continueButton = findViewById(R.id.main_btn);
+        setContentView(R.layout.activity_genre_selection);
+        mainBtn = findViewById(R.id.main_btn);
 
-        continueButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(GenreSelection.this,MainActivity.class);
-                startActivity(intent);
-            }
-        });
 
         thriller = (CheckBox) findViewById(R.id.thrillers_check);
         cooking = (CheckBox) findViewById(R.id.cooking_check);
@@ -77,7 +69,8 @@ public class GenreSelection extends AppCompatActivity {
                     genres.add(comedy.getText().toString());
                 }
                 Toast.makeText(getApplicationContext(), "Welcome to the main page with genres: " + genres.toString(), Toast.LENGTH_LONG).show();
-
+                Intent intent = new Intent(GenreSelection.this,MainActivity.class);
+                startActivity(intent);
             }
         });
 

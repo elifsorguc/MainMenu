@@ -6,9 +6,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -29,12 +32,13 @@ public class StudentSignUp extends AppCompatActivity {
     private EditText name;
     private EditText email;
     private EditText password;
-    private EditText username;
     private EditText ID;
     private Student student;
 
     private Button signUpBtn;
     private Button goSignInPage;
+
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +48,7 @@ public class StudentSignUp extends AppCompatActivity {
         name = (EditText) findViewById(R.id.name_field);
         email = (EditText) findViewById(R.id.email_field);
         password = (EditText) findViewById(R.id.password_field);
-        username = (EditText) findViewById(R.id.username_field);
+
         ID = (EditText) findViewById(R.id.bilkentID_field);
 
         mAuth = FirebaseAuth.getInstance();
@@ -112,5 +116,18 @@ public class StudentSignUp extends AppCompatActivity {
         });
     }
 
+    private boolean bilkentMailChecker(String email){
+        boolean check=true;
+        int start=email.indexOf('@');
+        if(!Patterns.EMAIL_ADDRESS.matcher(email).matches())
+        {
+            return false;
+        }
+        if(!email.substring(start).equals("@ug.bilkent.edu.tr"))
+        {
+            check=false;
+        }
+        return check;
+    }
 
 }

@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -74,5 +75,16 @@ public class SignIn extends AppCompatActivity {
 
             }
         });
+    }
+    private boolean bilkentMailChecker(String email) {
+        boolean check = true;
+        int start = email.indexOf('@');
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            return false;
+        }
+        if (!email.substring(start).equals("@ug.bilkent.edu.tr")) {
+            check = false;
+        }
+        return check;
     }
 }

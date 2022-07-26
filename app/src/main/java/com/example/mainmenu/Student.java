@@ -12,7 +12,7 @@ public class Student extends User {
     private boolean isProfileVisible;
     private boolean isStatusVisible;
     private boolean isListVisible;
-    private BookList bookList;
+    private BookLists bookList;
     
     ArrayList<Genre> genres = new ArrayList<Genre>();
     ArrayList<BookList> bookLists = new ArrayList<BookList>();
@@ -125,12 +125,12 @@ public class Student extends User {
         bookLists.add(list);
     }
     
-    public void addBookToBookList(BookList list, Book book){
+    public void addBookToBookList(BookLists list, Book book){
         list.addBook(book);
         this.bookList = list;
     }
 
-    public void deleteBookFromBookList(BookList list, Book book){
+    public void deleteBookFromBookList(BookLists list, Book book){
         list.removeBook(book);
         this.bookList = list;
     }

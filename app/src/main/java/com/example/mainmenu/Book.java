@@ -1,18 +1,18 @@
 package com.example.mainmenu;
-import java.time.LocalDate;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Book
  */
-public class Book {
+public class Book implements Serializable {
 
     private String name;
     private String language;
     private String author;
     private String publication;
-    private LocalDate publicationdDate;
-    private Genre genre;
+    private int publicationdDate;
+    private ArrayList<String> genre;
     private String ISBN;
     private boolean isAvailable;
     private ArrayList<Integer> ratings;
@@ -20,7 +20,7 @@ public class Book {
 
 
     // constructor
-    public Book(String name, String language, String author, String publication, Genre genre, String ISBN, LocalDate pubdate,int image){
+    public Book(String name, String language, String author, String publication, ArrayList<String> genre, String ISBN, int pubdate,int image){
         this.name = name;
         this.language = language;
         this.author = author;
@@ -42,6 +42,7 @@ public class Book {
     }
 
     public String getPublication(){
+
         return publication;
     }
 
@@ -49,11 +50,11 @@ public class Book {
         return language;
     }
 
-    public LocalDate getPubdate(){
+    public int getPubdate(){
         return publicationdDate;
     }
 
-    public Genre getGenre(){
+    public ArrayList<String> getGenre(){
         return genre;
     }
 
@@ -72,6 +73,7 @@ public class Book {
     }
 
     public String getauthor(){
+
         return author;
     }
 

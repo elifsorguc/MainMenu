@@ -13,7 +13,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="1dp"
         android:layout_marginStart="2dp"
-        android:layout_marginEnd="88dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="16dp"
         android:backgroundTint="@color/material_dynamic_tertiary70"
         android:gravity="center"
         android:padding="20dp"
@@ -24,58 +25,14 @@
         app:rippleColor="@color/teal_700"
         app:strokeColor="@color/teal_700" />
 
-    <CheckBox
-        android:id="@+id/adminCheck"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="2dp"
-        app:layout_constraintEnd_toStartOf="@+id/admintxt"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
-
-    <TextView
-        android:id="@+id/admintxt"
-        android:layout_width="124dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="140dp"
-        android:layout_marginBottom="92dp"
-        android:padding="9dp"
-        android:text="I'm an admin"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/adminCheck"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
-        app:layout_constraintVertical_bias="0.111" />
-
-    <Button
-        android:id="@+id/signupbtn"
-        android:layout_width="110dp"
-        android:layout_height="72dp"
-        android:layout_margin="1dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="14dp"
-        android:backgroundTint="@color/material_dynamic_tertiary70"
-        android:gravity="center"
-        android:padding="20dp"
-        android:text="SIGN UP"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/admintxt"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
-        app:rippleColor="@color/teal_700"
-        app:strokeColor="@color/teal_700" />
-
     <LinearLayout
         android:id="@+id/linearLayout4"
-        android:layout_width="390dp"
-        android:layout_height="419dp"
+        android:layout_width="381dp"
+        android:layout_height="466dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="30dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/adminCheck"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -83,9 +40,9 @@
         <TextView
             android:id="@+id/signUp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="145dp"
             android:gravity="center"
-            android:text="Sign Up"
+            android:text="BOOKWORM"
             android:textColor="#F04A5536"
             android:textSize="35dp" />
 
@@ -113,19 +70,6 @@
             android:drawablePadding="15dp"
             android:drawableTint="@color/white"
             android:hint="Email"
-            android:padding="20dp" />
-
-        <EditText
-            android:id="@+id/username_field"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="#D7C9E19E"
-            android:backgroundTint="@color/material_dynamic_tertiary70"
-            android:drawableLeft="@drawable/ic_baseline_verified_user_24"
-            android:drawablePadding="15dp"
-            android:drawableTint="@color/white"
-            android:hint="Username"
             android:padding="20dp" />
 
         <EditText
@@ -159,12 +103,29 @@
         android:id="@+id/textView4"
         android:layout_width="157dp"
         android:layout_height="37dp"
-        android:layout_marginStart="67dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="16dp"
         android:text="Already have an account"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/signInPage"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/signupbtn"
+        android:layout_width="110dp"
+        android:layout_height="72dp"
+        android:layout_margin="1dp"
+        android:layout_marginStart="300dp"
+        android:layout_marginEnd="151dp"
+        android:backgroundTint="@color/material_dynamic_tertiary70"
+        android:gravity="center"
+        android:padding="20dp"
+        android:text="SIGN UP"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
+        app:rippleColor="@color/teal_700"
+        app:strokeColor="@color/teal_700" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
